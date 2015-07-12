@@ -130,12 +130,6 @@ namespace Laboratorio1.Integral
 
         
 
-        public bool verificarLimites (double valorA, double valorB)
-        {
-            bool result;
-            result = (valorA < valorB);
-            return result;
-        }
 
         private double IntegrarSimple(double valorA, double valorB)
         {
@@ -181,8 +175,16 @@ namespace Laboratorio1.Integral
 
         private void ObtenerSoluciones(double valorA, double valorB)
         {
-            if (verificarLimites(valorA,valorB))
+            if (!verificarLimites(valorA,valorB))
                 throw new Exception("El valor de A es mayor a el valor de B");
+        }
+
+
+        public bool verificarLimites(double valorA, double valorB)
+        {
+            bool result;
+            result = (valorA < valorB);
+            return result;
         }
 
         private double ValorAbsoluto(double valorK)
