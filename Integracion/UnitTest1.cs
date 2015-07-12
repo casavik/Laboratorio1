@@ -80,10 +80,10 @@ namespace Integra
         {
             double valorA = 5.0;
             double VAlorB = 10.0;
-            double valorK = 40.0;
+            double valorK = 250.0;
             double valorN = 2.0;
             int tipo = 6;
-            double res = 0.6669;
+            double res = 0.342;
             Assert.IsTrue(res == Math.Round((integral.ResolverIntegral(valorA, VAlorB, valorK, valorN, tipo)), 4));
         }
 
@@ -93,10 +93,10 @@ namespace Integra
         {
             double valorA = 5.0;
             double VAlorB = 10.0;
-            double valorK = 40.0;
+            double valorK = 450.0;
             double valorN = 2.0;
             int tipo = 7;
-            double res = 0.7451;
+            double res = 1;
             Assert.IsTrue(res == Math.Round((integral.ResolverIntegral(valorA, VAlorB, valorK, valorN, tipo)), 4));
         }
     }
