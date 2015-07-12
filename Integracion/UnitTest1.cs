@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Laboratorio1.Integral;
 
-namespace Integracion
+namespace Integra
 {
     [TestClass]
     public class UnitTest1
@@ -10,6 +10,7 @@ namespace Integracion
         [TestMethod]
         public void PruebaIntegracion()
         {
+          
             Laboratorio1.Integral.Integracion integral = new Laboratorio1.Integral.Integracion();
 
             double valorA = 5;
@@ -18,6 +19,7 @@ namespace Integracion
             double valorN=2;
             int tipo = 1;
             double res = 5;
+            //double resultadoReal = integral.ResolverIntegral(valorA, VAlorB, valorK, valorN, tipo);
 
             Assert.IsTrue(res== integral.ResolverIntegral(valorA, VAlorB, valorK, valorN, tipo));
                        

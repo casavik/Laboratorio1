@@ -6,7 +6,7 @@
     <ProjectGuid>{D4B2DE85-D833-49FD-86B1-7975C164EF79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Integracion</RootNamespace>
+    <RootNamespace>Integra</RootNamespace>
     <AssemblyName>Integracion</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
