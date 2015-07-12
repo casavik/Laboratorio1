@@ -9,6 +9,7 @@ namespace Laboratorio1.Integral
     public class Integracion
     {
         double a, b, k, n, resultado;
+        int tipo;
 
         public double valorA
         {
@@ -50,14 +51,22 @@ namespace Laboratorio1.Integral
             set { resultado = valorResultado; }
         }
 
+        public int tipoR
+        {
+            get
+            { return tipo; }
+
+            set { tipo = tipoR; }
+        }
+
         public Integracion()
         {
             valorA = 0;
             valorB = 0;
             valorK = 0;
-            //tipo = 0;
+            tipo = 0;
         }
-        public Integracion(double a, double b, double k, double tipo)
+        public Integracion(double a, double b, double k, int tipo)
         {
             valorA = a;
             valorB = b;
@@ -65,13 +74,13 @@ namespace Laboratorio1.Integral
             tipo = 0;
         }
 
-        public Integracion(double a, double b, double k, double n, double tipo)
+        public Integracion(double a, double b, double k, double n, int tipor)
         {
             valorA = a;
             valorB = b;
             valorK = k;
             valorN = n;
-            tipo = 0;
+            tipo = tipor;
         }
 
         public double ResolverIntegral(double a, double b, double k, double n, int tipo){
@@ -79,38 +88,38 @@ namespace Laboratorio1.Integral
             switch (tipo)
             {
                 case 1:
-                    ObtenerSoluciones();
-                    return IntegrarSimple();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarSimple(a,b);
                     break;
 
                 case 2:
-                    ObtenerSoluciones();
-                    return IntegrarConstante();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarConstante(a,b,k);
                     break;
 
                 case 3:
-                    ObtenerSoluciones();
-                    return IntegrarPotencia();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarPotencia(a,b,n);
                     break;
 
                 case 4:
-                    ObtenerSoluciones();
-                    return IntegrarLogaritmo();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarLogaritmo(k);
                     break;
 
                 case 5:
-                    ObtenerSoluciones();
-                    return IntegrarExponencial();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarExponencial(n);
                     break;
 
                 case 6:
-                    ObtenerSoluciones();
-                    return IntegrarSeno();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarSeno(k);
                     break;
 
                 case 7:
-                    ObtenerSoluciones();
-                    return IntegrarCoseno();
+                    ObtenerSoluciones(a,b);
+                    return IntegrarCoseno(k);
                     break;
 
                 default:
@@ -121,62 +130,62 @@ namespace Laboratorio1.Integral
 
         
 
-        public bool verificarLimites ()
+        public bool verificarLimites (double valorA, double valorB)
         {
             bool result;
             result = (valorA < valorB);
             return result;
         }
 
-        private double IntegrarSimple()
+        private double IntegrarSimple(double valorA, double valorB)
         {
             resultado = (valorB - valorA);
             return resultado;
         }
 
-        private double IntegrarConstante()
+        private double IntegrarConstante(double valorA, double valorB,double valorK)
         {
             resultado = ((valorK) * (valorB - valorA));
             return resultado;
         }
 
-        private double IntegrarPotencia()
+        private double IntegrarPotencia(double valorA, double valorB, double valorN)
         {
             resultado = (Math.Pow(valorK, n + 1)) / (n + 1);
             return resultado;
         }
 
-        private double IntegrarLogaritmo()
+        private double IntegrarLogaritmo(double valorK)
         {
-            resultado = Math.Log(ValorAbsoluto(), Math.E);
+            resultado = Math.Log(ValorAbsoluto(valorK), Math.E);
             return resultado;
         }
 
-        private double IntegrarExponencial()
+        private double IntegrarExponencial(double valorN)
         {
             resultado = Math.Pow(Math.E, valorN);
             return resultado;
         }
 
-        private double IntegrarSeno()
+        private double IntegrarSeno(double valorK)
         {
             resultado = (Math.Cos(valorK) *(-1));
             return resultado;
         }
 
-        private double IntegrarCoseno()
+        private double IntegrarCoseno(double valorK)
         {
             resultado = Math.Sin(valorK);
             return resultado;
         }
 
-        private void ObtenerSoluciones()
+        private void ObtenerSoluciones(double valorA, double valorB)
         {
-            if (verificarLimites())
+            if (verificarLimites(valorA,valorB))
                 throw new Exception("El valor de A es mayor a el valor de B");
         }
 
-        private double ValorAbsoluto()
+        private double ValorAbsoluto(double valorK)
         {
             if (valorK < 0)
             {
