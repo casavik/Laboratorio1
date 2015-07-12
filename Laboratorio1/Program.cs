@@ -15,9 +15,9 @@ namespace Laboratorio1.Integral
 
            double valorA = 5.0;
            double VAlorB = 10.0;
-           double valorK = 40.0;
+           double valorK = 450.0;
            double valorN = 10.0;
-           int tipo = 6;
+           int tipo = 7;
            double res = 0.0;
 
            double result = Math.Sin(40);
