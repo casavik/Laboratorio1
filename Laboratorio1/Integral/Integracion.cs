@@ -99,7 +99,7 @@ namespace Laboratorio1.Integral
 
                 case 3:
                     ObtenerSoluciones(a,b);
-                    return IntegrarPotencia(a,b,n);
+                    return IntegrarPotencia(a,b,k,n);
                     break;
 
                 case 4:
@@ -128,9 +128,7 @@ namespace Laboratorio1.Integral
 
         }
 
-        
-
-
+       
         private double IntegrarSimple(double valorA, double valorB)
         {
             resultado = (valorB - valorA);
@@ -143,9 +141,9 @@ namespace Laboratorio1.Integral
             return resultado;
         }
 
-        private double IntegrarPotencia(double valorA, double valorB, double valorN)
+        private double IntegrarPotencia(double valorA, double valorB, double valorK, double valorN)
         {
-            resultado = (Math.Pow(valorK, n + 1)) / (n + 1);
+            resultado = (Math.Pow(valorK, valorN + 1)) / (valorN + 1);
             return resultado;
         }
 
