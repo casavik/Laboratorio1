@@ -161,13 +161,15 @@ namespace Laboratorio1.Integral
 
         private double IntegrarSeno(double valorK)
         {
-            resultado = (Math.Cos(valorK) *(-1));
+            double y = valorK * Math.PI / 180.0;
+            resultado = (Math.Cos(y) *(-1));
             return resultado;
         }
 
         private double IntegrarCoseno(double valorK)
         {
-            resultado = Math.Sin(valorK);
+            double y = valorK * Math.PI / 180.0;
+            resultado = Math.Sin(y);
             return resultado;
         }
 
